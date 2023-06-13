@@ -214,6 +214,7 @@ body {
 .row {
   align-items:center;
   justify-content: center;
+  font-size:large;
 }
 
 hr {
@@ -903,6 +904,7 @@ progress {
 .col-5 {
   flex: 0 0 auto;
   width: 41.66666667%;
+  text-size: large;
 }
 
 .col-6 {
@@ -4406,6 +4408,7 @@ textarea.form-control-lg {
 
 .card-text:last-child {
   margin-bottom: 0;
+  text-size:large;
 }
 
 .card-link + .card-link {
