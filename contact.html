@@ -5,8 +5,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
-<script src="https://cdn.emailjs.com/sdk/2.4.1/email.min.js"></script>
   <title>Nach Dem Sturm Kennels - Contact</title>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('qX08qa6AeXMTRgbsM');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -64,35 +85,49 @@ NachdemSturmKennels@Gmail.com
     </center>
   </div>
     <div class="col-md-5 col-lg-5 ml-auto d-flex align-items-center mt-4 mt-md-0">
-    <form action="/send-email" method="post">
+
+    <form id="contact-form">
   <fieldset>
-    <div class="form-group">      
-      <label for="name" class="form-label mt-4">Name</label>
-      <input type="text" name="name" class="form-control" id="name" aria-describedby="name" placeholder="Enter your name" required>
-      </div>
     
-    <div class="form-group">      
-      <label for="email" class="form-label mt-4">Email</label>
-      <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" required>
+    <div class="form-group">
+      <label for="name" class="form-label mt-4">Name</label>
+      <input type="text" class="form-control" name="user_name" aria-describedby="name" placeholder="Name">
+    </div>
+    
+<br>
+        
+        <div class="form-group">
+      <label for="email" class="form-label mt-4">Email address</label>
+      <input type="text" class="form-control" name="user_email" aria-describedby="emailHelp" placeholder="Enter email">
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
-    
+
+    <br>
+
     <div class="form-group">
-      <label for="subject" class="form-label mt-4">Subject</label>
-      <input type="text" class="form-control" id="subject" name="subject" aria-describedby="subject" placeholder="Enter subject" required>
-    </div>
-    
-    <div class="form-group">
-      <label for="textarea" class="form-label mt-4">Message</label>
-      <textarea class="form-control" id="textArea" name="message" rows="6" spellcheck="true" data-ms-editor="true" placeholder="Write your message here" required></textarea>
-    </div>
-    
-    <button type="submit" onclick="sendMessage()" class="btn btn-primary">Submit</button> 
-  </fieldset>
-</form>
+      <label for="subject" class="form-label mt-4" >Subject</label>
+      <input type="text" class="form-control" name="subject" placeholder="Subject">
     </div>
 
+    <br>
+
+    <div class="form-group">
+      <label for="message" class="form-label mt-4"></label>
+      <textarea class="form-control" id="textArea" name="message" rows="4" spellcheck="false" data-ms-editor="true"></textarea>
+    </div>
+      
+<br>
+
+    <div class="form-group">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
   
+      
+  </fieldset>
+    </form>
+    </div>
+</div>
+
 <br><br>
 
   <center>
@@ -106,7 +141,8 @@ NachdemSturmKennels@Gmail.com
     </div>
       </center>
   
-
+  
+  
   <br>
   <center>
   <a href="//www.dmca.com/Protection/Status.aspx?ID=ca0301e6-4954-4e16-b739-d288872da2b4" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w100-5x1-11.png?ID=ca0301e6-4954-4e16-b739-d288872da2b4"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
